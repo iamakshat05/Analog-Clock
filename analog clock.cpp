@@ -15,7 +15,7 @@ int main()
     while(1)
     {
          setactivepage(page);
-         setvisualpage(1-page);//adding buffering to make the graphics smooth
+         setvisualpage(1-page);//adding double buffering to make the graphics smooth
          cleardevice();
          setcolor(WHITE);
          circle(250,250,220);
@@ -33,6 +33,7 @@ int main()
          outtextxy(250+200*sin(11*PI/6)-10 , 250-200*cos(11*PI/6) , "11");
          outtextxy(250+200*sin(12*PI/6)-5 , 250-200*cos(12*PI/6) , "12");
     
+	    //Inserting IST with the help of ctime library
          time_t now = time(0);
          tm *ltm = localtime(&now);
          system("cls");
